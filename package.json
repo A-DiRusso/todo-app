@@ -1,0 +1,27 @@
+{
+  "name": "to_do_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "db:create": "createdb todo-app",
+    "db:init": "psql - f schema.sql todo-app && psql -f seed.sql todo-app",
+    "db:destroy": "dropdb todo-app",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "pg-promise": "^8.6.4"
+  }
+}
