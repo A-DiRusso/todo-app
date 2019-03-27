@@ -17,6 +17,15 @@ class Todo {
                         return null;
                     });
     }
+
+    save() {
+        return db.result(`
+        update todo set
+        content='${this.content}',
+        status='${this.status}'
+    where id=${this.id}
+    `)
+    }
 }
 
    
