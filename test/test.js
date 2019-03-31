@@ -6,12 +6,12 @@ chai.use(chaiAsPromised).should();
 
 const Todo = require('../models/todo');
 
-// describe('sanity check', function () {
-//     it('should be 2', function () {
-//         // assert.equal(2, 1 + 1);
-//         expect(1 + 1).to.equal(2);
-//     });
-// });
+describe('sanity check', function () {
+    it('should be 2', function () {
+        assert.equal(2, 1 + 1);
+        expect(1 + 1).to.equal(2);
+    });
+});
 
 describe('todo model', () => {
     it('should give todo by id', async() => {

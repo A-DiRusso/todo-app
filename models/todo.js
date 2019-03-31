@@ -18,6 +18,21 @@ class Todo {
                     });
     }
 
+    static getAll() {
+        return db.any(`select * from todo`) 
+            .then((arrayOfTodos) => {
+                return arrayOfTodos.map((todoData) => {
+                    const todoList = new Todo(
+                        todoData.id,
+                        todoData.content,
+                        todoData.status
+                    );
+                    console.log(todoList);
+                    return todoList;
+                }); 
+            });
+    }
+
     save() {
         return db.result(`
         update todo set
